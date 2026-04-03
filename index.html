@@ -395,7 +395,7 @@ function showDetail(id){
   if(item.dropped_by&&item.dropped_by.length){var chips='';for(var i=0;i<item.dropped_by.length;i++){var d=item.dropped_by[i];chips+='<div class="m-chip" onclick="searchMonster(\''+esc(d.monster_name)+'\')"><span class="dot"></span>'+esc(d.monster_name)+'</div>';}dropHtml='<div class="sec"><div class="sec-title">Didrop oleh Monster</div><div class="monster-grid">'+chips+'</div></div>';}
   var usedInHtml='';
   if(item.used_in&&item.used_in.length){var rows2='';for(var i=0;i<item.used_in.length;i++){var u=item.used_in[i];rows2+='<div class="ui-row" onclick="selectItem(\''+u.item_id+'\',true)"><span class="ui-name">'+esc(u.item_name)+'</span><span class="ui-qty">×'+u.quantity+' dibutuhkan</span></div>';}usedInHtml='<div class="sec"><div class="sec-title">Digunakan untuk Craft</div>'+rows2+'</div>';}
-  var noData=(recipeHtml||dropHtml||usedInHtml)?'':'<div class="no-data">Belum ada data craft atau drop untuk item ini. Bisa jadi item ini dari toko, event, atau kasir belum berhasil scrape halamannya.</div>';
+  var noData=(recipeHtml||dropHtml||usedInHtml)?'':'<div class="no-data">Belum ada data craft atau drop untuk item ini. </div>';
   document.getElementById('right').innerHTML='<div class="d-wrap"><div class="d-hero"><div class="d-ico-box">'+icoLarge(item.icon)+'</div><div><div class="d-name">'+esc(item.name)+'</div><div class="d-badges">'+badges+'</div></div></div>'+recipeHtml+dropHtml+usedInHtml+noData+'</div>';
   document.getElementById('right').scrollTop=0;
 }
